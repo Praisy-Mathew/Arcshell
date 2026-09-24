@@ -3462,29 +3462,60 @@ THEMEFOREST REQUIRED CLASSES
   position: relative;
   z-index: 1;
 }
+.header-style-2 .logo-header .logo-header-inner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b2522;
+  padding: 7px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.header-style-2 .logo-header .logo-header-inner a:hover {
+  background: #1f1a18;
+}
 .header-style-2 .logo-header .logo-header-inner img {
-  max-width: 160px;
-  max-height: 100%;
+  max-width: 175px;
+  max-height: 78px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 991px) {
+  .header-style-2 .logo-header {
+    width: 170px;
+  }
+  .header-style-2 .logo-header .logo-header-inner img {
+    max-width: 145px;
+    max-height: 65px;
+  }
+}
+@media (max-width: 575px) {
+  .header-style-2 .logo-header {
+    width: 140px;
+  }
+  .header-style-2 .logo-header .logo-header-inner a {
+    padding: 5px 12px;
+  }
+  .header-style-2 .logo-header .logo-header-inner img {
+    max-width: 125px;
+    max-height: 55px;
+  }
 }
 @media (max-width: 360px) {
+  .header-style-2 .logo-header {
+    width: 120px;
+  }
   .header-style-2 .logo-header .logo-header-inner img {
-    max-width: 110px;
+    max-width: 105px;
+    max-height: 48px;
   }
 }
 .header-style-2 .company-site-info {
   list-style: none;
   display: flex;
-}
-@media (max-width: 991px) {
-  .header-style-2 .company-site-info {
-    float: left;
-    padding-top: 20px;
-  }
-}
-@media (max-width: 540px) {
-  .header-style-2 .company-site-info {
-    display: none;
-  }
+  align-items: center;
+  margin-bottom: 0px;
 }
 .header-style-2 .company-site-info li {
   display: inline-flex;
@@ -3497,20 +3528,90 @@ THEMEFOREST REQUIRED CLASSES
   margin: 0px 10px;
   position: relative;
 }
-@media (max-width: 1320px) {
-  .header-style-2 .company-site-info li {
-    display: none;
-  }
-}
 .header-style-2 .company-site-info li i {
   color: #e2791d;
   margin-right: 10px;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 0px;
   font-weight: 300;
 }
 .header-style-2 .company-site-info li span {
   display: inline-block;
+}
+/* All Kerala Service Tag */
+.all-kerala-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #e2791d 0%, #c8630c 100%);
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 20px;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(226, 121, 29, 0.35);
+  transition: all 0.3s ease;
+  vertical-align: middle;
+}
+.all-kerala-tag i {
+  font-size: 13px;
+  color: #ffffff !important;
+  margin-right: 0 !important;
+  line-height: 1;
+}
+.all-kerala-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(226, 121, 29, 0.5);
+  color: #ffffff !important;
+}
+.header-style-2 .company-site-info li.header-service-tag-item {
+  margin-right: 15px;
+}
+@media (max-width: 1200px) {
+  .header-style-2 .company-site-info li {
+    margin: 0px 6px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 991px) {
+  .header-style-2 .company-site-info {
+    display: flex !important;
+    align-items: center;
+    float: left;
+    padding-top: 18px;
+    margin-bottom: 0px;
+  }
+  .header-style-2 .company-site-info li:not(.header-service-tag-item) {
+    display: none !important;
+  }
+  .header-style-2 .company-site-info li.header-service-tag-item {
+    display: inline-flex !important;
+    margin: 0 0 0 10px;
+  }
+}
+@media (max-width: 575px) {
+  .header-style-2 .company-site-info {
+    padding-top: 20px;
+  }
+  .header-style-2 .company-site-info li.header-service-tag-item .all-kerala-tag {
+    font-size: 10px;
+    padding: 3px 9px;
+    gap: 4px;
+    letter-spacing: 0.4px;
+  }
+  .header-style-2 .company-site-info li.header-service-tag-item .all-kerala-tag i {
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  .header-style-2 .company-site-info li.header-service-tag-item .all-kerala-tag {
+    font-size: 9px;
+    padding: 2px 7px;
+  }
 }
 .header-style-2.site-header {
   z-index: 999;
@@ -5266,7 +5367,12 @@ THEMEFOREST REQUIRED CLASSES
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 40px;
-  max-width: 236px;
+  max-width: 260px;
+}
+.footer-dark .logo-footer img {
+  max-width: 225px;
+  height: auto;
+  display: inline-block;
 }
 @media (max-width: 1199px) {
   .footer-dark .logo-footer {
@@ -12846,3 +12952,74 @@ select {
 .sidebar-info-contents .text {
   color: #9b9fb5;
 }/*# sourceMappingURL=style.css.map */
+/* --- Enhanced Journey & What We Do Styling --- */
+.twm-achi-thumb {
+  width: 140px;
+  height: 90px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 25px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.twm-achi-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.twm-achi-bx ul li:hover .twm-achi-thumb img {
+  transform: scale(1.1);
+}
+.twm-achi-bx ul li:hover .twm-achi-thumb {
+  border-color: #e2791d;
+}
+.icon-box-style-three:hover .service-media img {
+  transform: scale(1.06);
+}
+@media (max-width: 991px) {
+  .twm-achi-thumb {
+    width: 110px;
+    height: 75px;
+    margin-right: 18px;
+  }
+}
+@media (max-width: 575px) {
+  .twm-achi-bx-left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .twm-achi-thumb {
+    margin-bottom: 12px;
+    width: 100%;
+    height: 130px;
+  }
+}
+
+/* Quick Links - white text */
+.widget_services-list li a {
+    color: #ffffff !important;
+}
+.widget_services-list li a:hover {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+.widget_services-list li a i {
+    color: #ffffff !important;
+}
+
+/* Footer address - white text for phone, email, address */
+.widget_address li a {
+    color: #ffffff !important;
+}
+.widget_address li a:hover {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+.widget_address li,
+.widget_address li span,
+.widget_address li i {
+    color: #ffffff !important;
+}
