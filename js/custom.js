@@ -951,8 +951,13 @@ function masonryBox() {
 }
 
 // > page loader function by = custom.js ========================= //		
+var loaderDismissed = false;
 function page_loader() {
-	$('.loading-area').fadeOut(1500);
+	if (loaderDismissed) return;
+	loaderDismissed = true;
+	$('.loading-area').fadeOut(300, function() {
+		$(this).css('display', 'none').css('pointer-events', 'none');
+	});
 }
 
 //Wow Animation
@@ -1065,7 +1070,10 @@ function progress_bar_width() {
 		//Wow Animation
 		wow_animation(),
 		/* 2.2 skills bar widths*/
-		progress_bar_width()
+		progress_bar_width();
+
+		// Shorten loading lag: fast dismissal once UI is ready
+		setTimeout(page_loader, 350);
 
 	}); 	
 
@@ -1189,24 +1197,58 @@ if(jQuery('.emblem').length){
 /*On scroll show project images function End*/
 
 
-//*On hover Image show Function *//
-const link = document.querySelectorAll('.twm-achi-bx-conent');
-const linkHoverReveal = document.querySelectorAll('.hover-reveal');
-const linkImages = document.querySelectorAll('.hidden-img');
+//*On hover / touch Image show Function as per template *//
+function init_journey_reveal() {
+  const links = document.querySelectorAll('.twm-achi-bx-conent');
+  const reveals = document.querySelectorAll('.hover-reveal');
 
-for(let i = 0; i < link.length; i++) {
-  link[i].addEventListener('mousemove', (e) => {
-    linkHoverReveal[i].style.opacity = 1;
-    linkHoverReveal[i].style.transform = `translate(-170%, -50% ) rotate(5deg)`;
-    linkImages[i].style.transform = 'scale(1, 1)';
-    linkHoverReveal[i].style.left = e.clientX + "px";
-  })
-  
-  link[i].addEventListener('mouseleave', (e) => {
-    linkHoverReveal[i].style.opacity = 0;
-    linkHoverReveal[i].style.transform = `translate(-50%, -50%) rotate(-5deg)`;
-    linkImages[i].style.transform = 'scale(0.8, 0.8)';
-  })
+  if (!links.length || !reveals.length) return;
+
+  function isDesktop() {
+    return window.innerWidth > 768;
+  }
+
+  function hideAll() {
+    links.forEach(l => l.classList.remove('is-active'));
+  }
+
+  function toggleItem(idx) {
+    if (!isDesktop()) return; // No image reveal on mobile
+    const wasActive = links[idx].classList.contains('is-active');
+    hideAll();
+    if (!wasActive) {
+      links[idx].classList.add('is-active');
+    }
+  }
+
+  links.forEach((item, i) => {
+    // Hover for desktop
+    item.addEventListener('mouseenter', () => {
+      if (isDesktop()) {
+        hideAll();
+        item.classList.add('is-active');
+      }
+    });
+
+    item.addEventListener('mouseleave', () => {
+      if (isDesktop()) {
+        hideAll();
+      }
+    });
+
+    // Click for desktop
+    item.addEventListener('click', (e) => {
+      if (isDesktop()) {
+        toggleItem(i);
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init_journey_reveal);
+} else {
+  init_journey_reveal();
 }
 
 

@@ -13208,3 +13208,148 @@ select {
     line-height: 1.3 !important;
   }
 }
+
+
+
+
+
+
+/* ====================================================
+   OUR JOURNEY SECTION - DESKTOP SIDEWAYS & MOBILE CLEAN TYPOGRAPHY (NO IMAGE ON MOBILE)
+==================================================== */
+.twm-achi-bx ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  position: relative !important;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.twm-achi-bx ul li:hover,
+.twm-achi-bx ul li.active-row {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* DESKTOP VIEW (> 768px): Exact sideways reveal as per template */
+@media (min-width: 769px) {
+  .twm-achi-bx ul li .twm-achi-bx-conent {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 38px 20px !important;
+    text-align: left !important;
+    position: relative !important;
+    width: 100%;
+    cursor: pointer;
+  }
+  .twm-achi-text {
+    font-size: 32px !important;
+    font-family: 'Marcellus', serif !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.35s ease, transform 0.35s ease;
+    max-width: 65%;
+    z-index: 2;
+  }
+  .twm-achi-bx-conent:hover .twm-achi-text,
+  .twm-achi-bx-conent.is-active .twm-achi-text {
+    color: #ee3424 !important;
+    transform: translateX(8px);
+  }
+  .hover-reveal {
+    position: absolute !important;
+    width: 290px !important;
+    height: 195px !important;
+    top: 50% !important;
+    right: 25px !important;
+    left: auto !important;
+    pointer-events: none;
+    transform: translateY(-50%) rotate(-4deg) scale(0.85);
+    overflow: hidden;
+    opacity: 0;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    z-index: 100;
+  }
+  .hover-reveal img.hidden-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: scale(1.1);
+    transition: transform 0.45s ease-out !important;
+    display: block;
+  }
+  .twm-achi-bx-conent:hover .hover-reveal,
+  .twm-achi-bx-conent.is-active .hover-reveal {
+    opacity: 1 !important;
+    transform: translateY(-50%) rotate(2deg) scale(1) !important;
+  }
+  .twm-achi-bx-conent:hover .hover-reveal img.hidden-img,
+  .twm-achi-bx-conent.is-active .hover-reveal img.hidden-img {
+    transform: scale(1) !important;
+  }
+}
+
+/* TABLET ADJUSTMENTS (769px to 991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+  .twm-achi-bx ul li .twm-achi-bx-conent {
+    padding: 28px 10px !important;
+  }
+  .twm-achi-text {
+    font-size: 24px !important;
+    max-width: 58%;
+  }
+  .hover-reveal {
+    width: 210px !important;
+    height: 145px !important;
+    right: 15px !important;
+  }
+}
+
+/* MOBILE VIEW (<= 768px): Pure full-width typography (No image on hover/touch) */
+@media (max-width: 768px) {
+  .twm-achi-bx ul li .twm-achi-bx-conent {
+    display: block !important;
+    padding: 24px 8px !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+  .twm-achi-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 21px !important;
+    line-height: 1.45 !important;
+    font-family: 'Marcellus', serif !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block !important;
+  }
+  .twm-achi-bx-conent:hover .twm-achi-text,
+  .twm-achi-bx-conent:active .twm-achi-text {
+    color: #ee3424 !important;
+  }
+  /* Explicitly hide hover/touch reveal images on mobile */
+  .hover-reveal {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .twm-achi-bx ul li .twm-achi-bx-conent {
+    padding: 20px 4px !important;
+  }
+  .twm-achi-text {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+}
