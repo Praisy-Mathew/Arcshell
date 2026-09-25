@@ -3466,13 +3466,18 @@ THEMEFOREST REQUIRED CLASSES
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #111111;
-  padding: 7px 18px;
-  border-radius: 6px;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   transition: all 0.3s ease;
 }
 .header-style-2 .logo-header .logo-header-inner a:hover {
-  background: #000000;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 .header-style-2 .logo-header .logo-header-inner img {
   max-width: 175px;
@@ -3495,7 +3500,7 @@ THEMEFOREST REQUIRED CLASSES
     width: 140px;
   }
   .header-style-2 .logo-header .logo-header-inner a {
-    padding: 5px 12px;
+    padding: 0 !important;
   }
   .header-style-2 .logo-header .logo-header-inner img {
     max-width: 125px;
@@ -13353,3 +13358,122 @@ select {
     line-height: 1.4 !important;
   }
 }
+
+/* FAQ Section - Logo Red Background (#ee3424) */
+.faq-gen-que-wrap {
+  background-color: #ee3424 !important;
+  position: relative;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator.site-text-primary {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator div {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator > i {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator:before {
+  background-color: #111111 !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-small-separator:after {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.faq-gen-que-wrap .section-head .wt-title,
+.faq-gen-que-wrap .section-head .wt-title *,
+.faq-gen-que-wrap .section-head .wt-title span {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel:last-child {
+  margin-bottom: 0;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-head a {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 18px 65px 18px 24px;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-head a:not(.collapsed) {
+  color: #ee3424 !important;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-head .indicator {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(238, 52, 36, 0.08) !important;
+  color: #ee3424 !important;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-head [aria-expanded=true] .indicator {
+  background-color: #ee3424 !important;
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-head [aria-expanded=true] .indicator i {
+  color: #ffffff !important;
+}
+
+.faq-gen-que-wrap .wt-accordion .wt-panel .acod-content {
+  background-color: #ffffff !important;
+  color: #444444 !important;
+  padding: 0 24px 22px 24px !important;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .faq-gen-que-wrap .wt-accordion .wt-panel .acod-head a {
+    font-size: 16px !important;
+    padding: 16px 50px 16px 16px !important;
+    line-height: 1.4 !important;
+  }
+  .faq-gen-que-wrap .wt-accordion .wt-panel .acod-head .indicator {
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+  .faq-gen-que-wrap .wt-accordion .wt-panel .acod-content {
+    padding: 0 16px 18px 16px !important;
+    font-size: 15px !important;
+  }
+}
+
