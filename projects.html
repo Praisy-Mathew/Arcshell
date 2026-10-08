@@ -201,8 +201,7 @@
                     <!-- PAGINATION START -->
                     <div class="filter-wrap">
                         <ul class="masonry-filter">
-                            <li class="active"><a data-filter="*" href="#">All Videos &amp; Shorts</a></li>
-                            <li><a data-filter=".cat-full" href="#">Full Walkthroughs</a></li>
+                            <li class="active"><a data-filter=".cat-full" href="#">Full Walkthroughs</a></li>
                             <li><a data-filter=".cat-short" href="#">YouTube Shorts</a></li>
                             <li><a data-filter=".cat-kitchen" href="#">Modular Kitchens</a></li>
                             <li><a data-filter=".cat-living" href="#">Living &amp; Bedroom</a></li>
@@ -1342,6 +1341,13 @@ jQuery(document).ready(function($) {
             $('.video-item' + filter).stop(true, true).fadeIn(300);
         }
     });
+
+    // Initial filter state based on active tab
+    var initialFilter = $('.masonry-filter li.active a').attr('data-filter');
+    if (initialFilter && initialFilter !== '*') {
+        $('.video-item').hide();
+        $('.video-item' + initialFilter).show();
+    }
 });
 </script>
 
