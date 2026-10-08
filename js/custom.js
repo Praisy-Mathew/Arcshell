@@ -815,6 +815,7 @@ var swiper = new Swiper(".pro-filtr-cate-bx", config);
 const filters = document.querySelectorAll(".pro-filtr-cate-carousal span");
 function updateFilter(activeFilter) {
   const filters = document.querySelectorAll(".pro-filtr-cate-carousal span");
+  if (!filters || filters.length === 0) return;
   if (!activeFilter) {
     filters[0].classList.add("active");
     activeFilter = filters[0];
@@ -870,7 +871,9 @@ Array.prototype.forEach.call(filters, function (_filter) {
     }
   });
 });
-updateFilter(null);
+if (filters && filters.length > 0) {
+  updateFilter(null);
+}
 }
 // > End projects Filter with Slider function by = swiper-bundle.min.js ========================== //
 
